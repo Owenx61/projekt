@@ -36,14 +36,12 @@ $keres = "INSERT INTO adatok (adatok.bongeszo, adatok.Ip_cim, adatok.orszag, ada
         <title>Document</title>
     </head>
     <body>
-        <form action = '' method= 'post'>
+        <form action = '' method= ''>
             <div class="browser">Böngésző: <input readonly value='' id = "browser" name ="browser"></div>
             <div class="version">Publikus IP cím: <input readonly value = '' id = "ip" name = "ip"></div>
             <div class="orszag">Ország: <input readonly value = '' id = "orszag" name = "orsz"></div>
             <div class="os">Op. rendsz.: <input readonly value = '' id ="os" name = "os"></div>
-            
         </form>
-        <script src="index.js"></script>
-        
+        <script src="asd.js"></script>
     </body> 
     </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,6 @@
         <div class="os">Op. rendsz.: <input readonly value = '' id ="os" name = "os"></div>
         <button  id="ment" name = "mentes"></button>
     </form>
-    <script src="index.js"></script>
-    
+    <script src="asd.js"></script>
 </body> 
 </html>
