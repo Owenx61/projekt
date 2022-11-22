@@ -12,19 +12,31 @@
 
 if (isset($_POST["mentes"])){
     $conn = new mysqli("localhost", "root", "","projekt");
+/*if (isset($_POST["mentes"])){
+    $conn = new mysqli("localhost", "projadb", "123456789","projadb");
+*/    
 
-    if($conn->connect_error){
-        echo "Nem sikerült csatlakozni az adatbázis szerverhez.";
+if($conn->connect_error){
+    echo "Nem sikerült csatlakozni az adatbázis szerverhez.";
     }
 }
+
+
 
 $bong = trim($_POST["browser"]);
 $ip = trim($_POST["ip"]);
 $orszag = trim($_POST["orsz"]); 
 $opr = trim($_POST["os"]);
+$eszkoz = trim($_POST["esz"]);
+$RAM = trim($_POST["ram"]);
+$video = trim($_POST["vid"]);
+$aksi = trim($_POST["aksi"]);
+$mag = trim($_POST["log"]);
 
-$keres = "INSERT INTO adatok (adatok.bongeszo, adatok.Ip_cim, adatok.orszag, adatok.oprendsz) VALUES ('". $bong ."','". $ip ."', '". $orszag ."','". $opr ."');";
+$keres = "INSERT INTO adatok (adatok.bongeszo, adatok.Ip_cim, adatok.orszag, adatok.oprendsz, adatok.esz, adatok.ram, adatok.vid, adatok.aksi, adatok.log) 
+VALUES ('". $bong ."','". $ip ."', '". $orszag ."','". $opr ."','". $eszkoz ."','". $RAM ."','". $video ."','". $aksi ."','". $mag ."');";
     $result = $conn->query($keres);
+    
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -36,12 +48,17 @@ $keres = "INSERT INTO adatok (adatok.bongeszo, adatok.Ip_cim, adatok.orszag, ada
         <title>Document</title>
     </head>
     <body>
+        
         <form action = '' method= ''>
-            <div class="browser">Böngésző: <input readonly value='' id = "browser" name ="browser"></div>
-            <div class="version">Publikus IP cím: <input readonly value = '' id = "ip" name = "ip"></div>
-            <div class="orszag">Ország: <input readonly value = '' id = "orszag" name = "orsz"></div>
-            <div class="os">Op. rendsz.: <input readonly value = '' id ="os" name = "os"></div>
+            <div>Böngésző: <?php echo $bong?></div>
+            <div>Publikus IP cím: <?php echo $ip?></div>
+            <div>Ország: <?php echo $orszag?></div>
+            <div>Op. rendsz.: <?php echo $opr?></div>
+            <div>Eszköz: <?php echo $eszkoz?></div>
+            <div>RAM: <?php echo $RAM?></div>
+            <div>Videókártya: <?php echo $video?></div>
+            <div>Akkumlátor: <?php echo $aksi?></div>
+            <div>Logikai proc. száma: <?php echo $mag?></div>
         </form>
-        <script src="asd.js"></script>
     </body> 
     </html>
